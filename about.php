@@ -15,8 +15,7 @@
 <nav>
 <a href="index.php">Home</a>
 	<a href="about.php">About</a>
-	<a href="previous_work.php">Previous Work</a>
-	<a href="../west/index.php">West</a>
+	<a href="color_coordinate.php">Color Coordinate</a>
 </nav>
 <hr>
 <img src="" alt="team logo">
