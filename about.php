@@ -32,7 +32,7 @@
 <p> Team member bio
 </p>
 
-<img src="" alt="team member image">
+<img src="" alt="./images/jackson-scott-selfie.jpg">
 <p> Hi, I'm Jackson Scott. I am a senior studying computer science at Colorado State University.<br>
 	When I am not in school I enjoy hiking, gaming, and hanging out with my friends.
 </p>
