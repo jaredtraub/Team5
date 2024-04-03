@@ -5,7 +5,7 @@
 		<meta name="description" content="CS312 team about page">
 		<meta name="keywords" content="HTML">
 		<meta name="author" content="Jacob Cole">
-		<!-- <link rel="stylesheet" href="style.css">-->
+		<link rel="stylesheet" href="style.css">
 		
 			<title>About Us</title>
 	</head>
