@@ -29,7 +29,9 @@
 </p>
 
 <img src="" alt="team member image">
-<p> Team member bio
+<p> Hi, I'm Jackson Scott. I study computer science at Colorado State University and have a concetration<br>
+	networks and security. My expected graduation date is Winter 2024. When not in school I enjoy hiking,<br>
+	gaming, and hanging out with my friends.
 </p>
 
 <img src="" alt="team member image">
