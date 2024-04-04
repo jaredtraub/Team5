@@ -31,7 +31,7 @@
 </p>
 	
 <h3>Jared Traub</h3>
-<img src="" alt="team member image">
+<img src="./images/jared-traub.jpg" alt="team member image">
 <p> Jared Traub is a student at Colorado State University, pursuing a Bachelor's in Computer Science <br>
 	with a Minor in Design Thinking. With the current goal of completing school, Jared is focused <br>
 	on gaining the necessary skills to enter the workforce and continue his creative endeavors with <br>
@@ -40,8 +40,8 @@
 	design within front-end presentations.
 </p>
 
-<h3>Jackson Scott<h3>
-<img src="" alt="./images/jackson-scott-selfie.jpg">
+<h3>Jackson Scott</h3>
+<img src="./images/jackson-scott-selfie.jpg" alt="./images/jackson-scott-selfie.jpg">
 <p> Hi, I'm Jackson Scott. I am a senior studying computer science at Colorado State University.<br>
 	When I am not in school I enjoy hiking, gaming, and hanging out with my friends.
 </p>

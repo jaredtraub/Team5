@@ -9,6 +9,6 @@
 			<title>Home</title>
 	</head>
     <body>
-        <h1>Coloodinate</h1>
+        <h1>Coloordinate</h1>
     </body>
 </html>
