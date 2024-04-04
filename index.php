@@ -9,6 +9,14 @@
 			<title>Home</title>
 	</head>
     <body>
-        <h1>Coloordinate</h1>
+	
+	<img src="./images/ColordinateLogo.png" alt="header text image" height=100px>
+
+	<img src="./images/ColordinateText.png" alt="header text image">
+	<nav>
+		<a href="index.php">Home</a>
+		<a href="about.php">About</a>
+		<a href="color_coordinate.php">Color Coordinate</a>
+	</nav>
     </body>
 </html>
