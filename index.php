@@ -5,21 +5,23 @@
 		<meta name="description" content="CS312 team 5 index page">
 		<meta name="keywords" content="HTML">
 		<meta name="author" content="Jared Traub">
-		<!-- <link rel="stylesheet" href="style.css">-->
+		<link rel="stylesheet" href="style.css">
 			<title>Home</title>
 	</head>
     <body>
-	
-	<img src="./images/ColordinateLogo.png" alt="header text image" height=100px>
-
-	<img src="./images/ColordinateText.png" alt="header text image">
-	<hr>
 	<nav>
-		<a href="index.php">Home</a>
-		<a href="about.php">About</a>
-		<a href="color_coordinate.php">Color Coordinate</a>
+		<a style="color=#04622D" href="about.php">About</a>
+		<a href="index.php">
+			<img class = "logo" src="./images/ColordinateText.png" alt="header logo image" height=50px>
+		</a>
+		<a style="color=#AB0D12" href="color_coordinate.php">Generate!</a>
 	</nav>
-	<hr>
+
+
+	<img class = "logo" src="./images/ColordinateLogo2.png" alt="logo image">
+	
+	
+	<br>
 	<p>
 		Welcome to Colordinate, your go-to destination for effortless color coordination! Are you tired of<br> 
 		struggling to find the perfect color combinations for your projects? Look no further! Our<br> 

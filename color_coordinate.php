@@ -14,7 +14,6 @@
 <h1>Color Coordinator</h1>
 <hr>
 <nav>
-    <a href="index.php">Home</a>
 	<a href="about.php">About</a>
 	<a href="color_coordinate.php">Color Coordinate</a>
 </nav>
@@ -26,7 +25,7 @@
 
     <div id="colorCoordinate">
 
-    </div>  
+    </div>
 
     <script type="text/javascript" src="./scripts/table.js"></script>	
 </body>
