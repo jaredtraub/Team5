@@ -10,6 +10,7 @@
 			<title>About Us</title>
 	</head>
 <body>
+<img src="./images/ColordinateText.png" alt="team logo">
 <h1>About Us</h1>
 <hr>
 <nav>
@@ -18,7 +19,7 @@
 	<a href="color_coordinate.php">Color Coordinate</a>
 </nav>
 <hr>
-<img src="" alt="team logo">
+
 
 <h2>Meet the Team</h2>
 

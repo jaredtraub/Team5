@@ -1,9 +1,53 @@
-nav{
-    height: 30px;
-    text-align: center;
-    margin-top: 0px;
-    margin-bottom: 0px;
+
+body{
+  margin-top: 75px;
+  background-color: #FAF9F6;
+  color: #005700;
 }
 
+nav{
+    background-color: transparent;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 10px 20px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    
+}
+
+  nav a {
+    color: #AB0D12;
+    font-size: 25pt;
+    text-decoration: none; 
+    padding: 0 30px;
+  }
+
 nav a:hover{
+    color: #D0EAF0;
+    font-size: 30pt;
+}
+
+nav img:hover{
+    height: 60px;
+}
+
+.text{
+    display: block;
+    margin: 0 auto;
+    align-items:center;
+    padding: 10px;
+    width: 50%;
+    height: auto;
+}
+
+.logo{
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+    padding: 10px;
 }
