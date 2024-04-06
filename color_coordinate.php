@@ -15,23 +15,29 @@
 <hr>
 <nav>
 	<a href="about.php">About</a>
-	<a href="color_coordinate.php">Color Coordinate</a>
+	<a href="index.php">Home</a>
 </nav>
 <hr>
 <body>
-    <div id="colorSelect">
+    <form id="colorForm">
+        <label for="numColors">Number of Colors:</label>
+        <input type="number" id="numColors" name="numColors" min="1" max="10"><br><br>
+        
+        <!-- Add more input fields as needed -->
+        
+        <input type="submit" value="Generate Color Coordinate">
+    </form>
+    <div id="colorSelect"></div>
 
-    </div>
+    <div id="errorMessage"></div>
 
-    <div id="colorCoordinate">
-
-    </div>
+    <div id="colorCoordinate"></div>
 
     <script type="text/javascript" src="./scripts/table.js"></script>	
 </body>
 <footer>
 	<hr>
-	    <p> 2024 Team Name</p>
+	    <p> 2024 Team 5</p>
 	<hr>
 	<hr>
 </footer>
