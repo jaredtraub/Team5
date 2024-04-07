@@ -10,20 +10,23 @@
 	</head>
     <body>
 	<nav>
+		<a href="index.php">Home</a>
 		<a style="color=#04622D" href="about.php">About</a>
 		<a href="index.php">
 			<img class = "logo" src="./images/ColordinateText.png" alt="header logo image" height=50px>
 		</a>
-		<a style="color=#AB0D12" href="color_coordinate.php">Generate!</a>
+		<a style="color=#AB0D12" href="color_coordinate.php">Color Coordinator</a>
 	</nav>
 
 
 	<img class = "logo" src="./images/ColordinateLogo2.png" alt="logo image">
 	
-	
+	<h3> <em>Welcome to Colordinate, your go-to destination for effortless color coordination!</em></h3>
+
 	<br>
+	<div class="about">
 	<p>
-		Welcome to Colordinate, your go-to destination for effortless color coordination! Are you tired of<br> 
+		Are you tired of 
 		struggling to find the perfect color combinations for your projects? Look no further! Our<br> 
 		innovative platform is designed to simplify the process of creating stunning color palettes tailored<br>
 		to your unique style and needs. Whether you're a seasoned designer seeking inspiration or a beginner<br>
@@ -32,10 +35,11 @@
 		your vision to life. Say goodbye to color clashes and hello to seamless coordination. Join us today<br> 
 		and unlock the power of color harmony at your fingertips!
 	</p>
+</div>
     </body>
 	<footer>
 	<hr>
-	    <p> 2024 Team Name</p>
+	    <p> 2024 Team 5</p>
 	<hr>
 	<hr>
 </footer>

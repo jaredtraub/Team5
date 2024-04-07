@@ -3,10 +3,25 @@ html{
 }
 body{
   margin-top: 75px;
-  background-color: #FAF9F6;
+  background-color: #fff5d6;
   color: #005700;
+  text-align: center;
 }
-
+h1{
+  font-size: 25pt;
+  color: #2A2E93;
+}
+h2{
+  font-size: 22pt;
+  color: #2A2E93;
+}
+h3{
+  font-size: 20pt;
+  color: #2A2E93;
+}
+p{
+  font-size: 14pt;
+}
 nav{
     background-color: transparent;
     text-align: center;
@@ -23,14 +38,14 @@ nav{
 }
 
   nav a {
-    color: #AB0D12;
+    color: #A70C11;
     font-size: 25pt;
     text-decoration: none; 
     padding: 0 30px;
   }
 
 nav a:hover{
-    color: #D0EAF0;
+    color: #03578C;
     font-size: 30pt;
 }
 
@@ -54,8 +69,12 @@ nav img:hover{
     padding: 10px;
 }
 
-.person{
-    height: 200px;
-    width: 200px;
+.people{
     text-align: center;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.about{
+  padding: 15px;
 }

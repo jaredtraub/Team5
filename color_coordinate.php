@@ -12,12 +12,16 @@
     </head>
 <body>
 <h1>Color Coordinator</h1>
-<hr>
+
 <nav>
-    <a href="about.php">About</a>
-    <a href="index.php">Home</a>
-</nav>
-<hr>
+		<a href="index.php">Home</a>
+		<a style="color=#04622D" href="about.php">About</a>
+		<a href="index.php">
+			<img class = "logo" src="./images/ColordinateText.png" alt="header logo image" height=50px>
+		</a>
+		<a style="color=#AB0D12" href="color_coordinate.php">Color Coordinator</a>
+	</nav>
+
 <body>
     <form id="colorForm">
         <label for="numColors">Number of Colors:</label>
