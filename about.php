@@ -24,7 +24,7 @@
 <h2>Meet the Team</h2>
 
 <h3>Jacob Cole</h3>
-<img src="./images/jacob.jpeg" alt="team member 1 image" width="200" height="200">
+<img class="person" src="./images/jacob.jpeg" alt="team member 1 image" width="200" height="200">
 <p> My name is Jacob Cole. I am a Computer Science major, with a concentration in network security.<br> 
 	I am currently a senior, and I am set to graduate in Winter 2024. When I am not in school, I work for <br>
 	the IT department in the college of engineering. One of my goals in life is to get a software development<br>
@@ -32,7 +32,7 @@
 </p>
 	
 <h3>Jared Traub</h3>
-<img src="./images/jared-traub.jpg" alt="team member image" width="200" height="200">
+<img class="person" src="./images/jared.jpg" alt="team member image" width="200" height="200">
 <p> Jared Traub is a student at Colorado State University, pursuing a Bachelor's in Computer Science <br>
 	with a Minor in Design Thinking. With the current goal of completing school, Jared is focused <br>
 	on gaining the necessary skills to enter the workforce and continue his creative endeavors with <br>
@@ -42,13 +42,9 @@
 </p>
 
 <h3>Jackson Scott</h3>
-<img src="./images/jackson-scott-selfie.jpg" alt="team member image" width="200" height="200">
+<img class="person" src="./images/jackson.jpg" alt="team member image" width="200" height="200">
 <p> Hi, I'm Jackson Scott. I am a senior studying computer science at Colorado State University.<br>
 	When I am not in school I enjoy hiking, gaming, and hanging out with my friends.
-</p>
-
-<img src="" alt="team member image">
-<p> Team member bio
 </p>
 
 </body>

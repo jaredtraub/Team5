@@ -1,4 +1,6 @@
-
+html{
+  
+}
 body{
   margin-top: 75px;
   background-color: #FAF9F6;
@@ -50,4 +52,10 @@ nav img:hover{
     margin: 0 auto;
     align-items: center;
     padding: 10px;
+}
+
+.person{
+    height: 200px;
+    width: 200px;
+    text-align: center;
 }
