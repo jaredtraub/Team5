@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     colorCoordinate(rowsCols);
 });
 
+var paintedCells = {};
+
 function colorSelect(numColors){
     var colorTable = document.createElement('table');
     colorTable.setAttribute('border', '2');
@@ -20,15 +22,6 @@ function colorSelect(numColors){
     for(var i = 0; i < numColors; i++){
         var row = colorTable.insertRow(i);
 
-        var cellLabel = row.insertCell();
-        cellLabel.style.width = '10%';
-        cellLabel.textContent = (" " + (i+1) + " ");
-
-        var cellRight = row.insertCell(); 
-        cellRight.style.width = '80%'
-        var colorDrop = colorDropdown(i);
-        cellRight.appendChild(colorDrop);
-
         var cellRadio = row.insertCell();
         cellRadio.style.width = '10%';
         var radio = document.createElement('input');
@@ -37,12 +30,40 @@ function colorSelect(numColors){
         radio.value = i;
         radio.checked = i === selectedColorIndex;
         cellRadio.appendChild(radio);
+
+        var cellLabel = row.insertCell();
+        cellLabel.style.width = '10%';
+        cellLabel.textContent = (" " + (i+1) + " ");
+
+        var cellRight = row.insertCell(); 
+        cellRight.style.width = '30%'
+        var colorDrop = colorDropdown(i);
+        cellRight.appendChild(colorDrop);
+
+        
+
+        var cellPainted = row.insertCell();
+        cellPainted.style.width = "50%";
+        cellPainted.id = 'paintedCells' + i; // Set ID for easy access
+        paintedCells[i] = []
     }
 
     document.getElementById('colorSelect').appendChild(colorTable);
 }
 
+function updatePaintedCellsList(colorIndex) {
+    var paintedCellsList = paintedCells[colorIndex];
+    paintedCellsList.sort();
+    var cellPainted = document.getElementById('paintedCells' + colorIndex);
+    cellPainted.innerHTML = '';
 
+    paintedCellsList.forEach(function(coordinate) {
+        var span = document.createElement('span');
+        span.textContent = coordinate + ', ';
+        cellPainted.appendChild(span);
+    });
+
+}
 
 function colorDropdown(numColors){
     var colorDrop = document.createElement('select');
@@ -90,6 +111,7 @@ function colorDropdown(numColors){
                 return;
             }
         }
+
         updateColors(previousValue, desiredColor);
         this.dataset.previousValue = this.value; //sets previous value to current val
     });
@@ -126,9 +148,24 @@ function colorCoordinate(rowsCols) {
                 col.textContent = i; //number letters for rows
             } else {
                 col.addEventListener('click', function(){
-                    var selectedColorIndex = document.querySelector('input[name="colorRadio"]:checked').value;
+                    var rowIndex = this.parentNode.rowIndex;
+                    var colIndex = this.cellIndex;
+                    var coordinate = String.fromCharCode(65 + (colIndex - 1)) + rowIndex;
+                    var selectedColorIndex = parseInt(document.querySelector('input[name="colorRadio"]:checked').value);
                     var selectedColor = document.getElementById('color' + selectedColorIndex).value;
+
+                    
+                    if (this.style.backgroundColor){
+                        return;
+                    }
+
                     this.style.backgroundColor = selectedColor;
+
+                    paintedCells[selectedColorIndex].push(coordinate);
+
+                    updatePaintedCellsList(selectedColorIndex);
+                    
+                    
                 });
             }
         }
