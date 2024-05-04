@@ -21,7 +21,7 @@
 
 	<img class = "logo" src="./images/ColordinateLogo2.png" alt="logo image">
 	
-	<h3> <em>Welcome to Colordinate, your go-to destination for effortless color coordination!</em></h3>
+	<h3> <em>Welcome to </em>COLORDINATE, <em>your go-to destination for effortless color coordination!</em></h3>
 
 	<br>
 	<div class="about">

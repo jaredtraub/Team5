@@ -15,25 +15,34 @@ function colorSelect(numColors){
     var colorTable = document.createElement('table');
     colorTable.setAttribute('border', '2');
 
+    var selectedColorIndex = 0; // Default to the color in the first row
 
     for(var i = 0; i < numColors; i++){
         var row = colorTable.insertRow(i);
         
-        //left column
-        var cellLeft = row.insertCell();
-        cellLeft.style.width = '20%';
-        cellLeft.textContent = (" " + (i+1) + " ");
+        var cellLabel = row.insertCell();
+        cellLabel.style.width = '10%';
+        cellLabel.textContent = (" " + (i+1) + " ");
         
-
-        //right column
         var cellRight = row.insertCell(); 
         cellRight.style.width = '80%'
         var colorDrop = colorDropdown(i);
         cellRight.appendChild(colorDrop);
+
+        var cellRadio = row.insertCell();
+        cellRadio.style.width = '10%';
+        var radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'colorRadio';
+        radio.value = i;
+        radio.checked = i === selectedColorIndex;
+        cellRadio.appendChild(radio);
     }
 
     document.getElementById('colorSelect').appendChild(colorTable);
 }
+
+
 
 function colorDropdown(numColors){
     var colorDrop = document.createElement('select');
@@ -106,16 +115,14 @@ function colorCoordinate(rowsCols) {
                 col.textContent = String.fromCharCode(65 + (j-1)); // Letter lables for columns
             } else if (j === 0) {
                 col.textContent = i; //number letters for rows
-            }else {
-                col.addEventListener('click', function(){ //returns the cell coordinate when clicked
-                    var rowIndex = this.parentNode.rowIndex;
-                    var colIndex = this.cellIndex;
-                    var coordinate = String.fromCharCode(65 + (colIndex -1)) + rowIndex;
-                    alert('Cell coordinate is: ' + coordinate);
+            } else {
+                col.addEventListener('click', function(){
+                    var selectedColorIndex = document.querySelector('input[name="colorRadio"]:checked').value;
+                    var selectedColor = document.getElementById('color' + selectedColorIndex).value;
+                    this.style.backgroundColor = selectedColor;
                 });
             }
         }
-        
     }
 
     document.getElementById('colorCoordinate').appendChild(colorGrid);
