@@ -19,11 +19,11 @@ function colorSelect(numColors){
 
     for(var i = 0; i < numColors; i++){
         var row = colorTable.insertRow(i);
-        
+
         var cellLabel = row.insertCell();
         cellLabel.style.width = '10%';
         cellLabel.textContent = (" " + (i+1) + " ");
-        
+
         var cellRight = row.insertCell(); 
         cellRight.style.width = '80%'
         var colorDrop = colorDropdown(i);
@@ -92,10 +92,20 @@ function colorDropdown(numColors){
         }
 
         this.dataset.previousValue = this.value; //sets previous value to current value
+        updateColors(previousValue, desiredColor);
     });
 
 
     return colorDrop;
+}
+
+function updateColors(oldColor, newColor){
+    var colorGridCells = document.querySelectorAll('#colorCoordinate td');
+    for (var i = 0; i < colorGridCells.length; i++) {
+        if (colorGridCells[i].style.backgroundColor === oldColor) {
+            colorGridCells[i].style.backgroundColor = newColor;
+        }
+    }
 }
 
 function colorCoordinate(rowsCols) {
