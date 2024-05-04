@@ -87,12 +87,11 @@ function colorDropdown(numColors){
                 setTimeout(function(){
                 errorMessage.textContent = '';
                 }, 2000);
-                break;
+                return;
             }
         }
-
-        this.dataset.previousValue = this.value; //sets previous value to current value
         updateColors(previousValue, desiredColor);
+        this.dataset.previousValue = this.value; //sets previous value to current val
     });
 
 
