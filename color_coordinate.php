@@ -67,10 +67,13 @@
                 // Replace dropdowns with plain text
                 var dropdowns = newTab.document.getElementsByTagName('select');
                 for (var i = 0; i < dropdowns.length; i++) {
-                    var selectedOption = dropdowns[i].options[dropdowns[i].selectedIndex].text;
-                    var plainText = newTab.document.createTextNode(selectedOption);
+                    var previousValue = dropdowns[i].value;
+                    var plainText = newTab.document.createTextNode(previousValue.text);
                     dropdowns[i].parentNode.replaceChild(plainText, dropdowns[i]);
+                    
                 }
+
+
 
                 // Disable form submission
                 var forms = newTab.document.getElementsByTagName('form');
@@ -81,9 +84,14 @@
                 // Disable buttons
                 var buttons = newTab.document.getElementsByTagName('button');
                 for (var i = 0; i < buttons.length; i++) {
-                    buttons[i].onclick = null;
-                    buttons[i].disabled = true;
+                    buttons[i].parentNode.removeChild(buttons[i]);
                 }
+
+                //Remove input elements
+                var submitInputs = newTab.document.querySelectorAll('input[type="submit"]');
+                submitInputs.forEach(function(input){
+                        input.parentNode.removeChild(input);
+                });
 
                 // Replace dropdowns with plain text
                 var dropdowns = newTab.document.querySelectorAll('select, input[type="number"]');
