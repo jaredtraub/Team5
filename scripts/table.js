@@ -57,9 +57,14 @@ function updatePaintedCellsList(colorIndex) {
     var cellPainted = document.getElementById('paintedCells' + colorIndex);
     cellPainted.innerHTML = '';
 
-    paintedCellsList.forEach(function(coordinate) {
+    paintedCellsList.forEach(function(coordinate, i) {
         var span = document.createElement('span');
-        span.textContent = coordinate + ', ';
+        if (i < paintedCellsList.length - 1){
+            span.textContent = coordinate + ', ';
+        }
+        else{
+            span.textContent = coordinate + '';
+        }
         cellPainted.appendChild(span);
     });
 
