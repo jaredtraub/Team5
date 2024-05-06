@@ -43,70 +43,125 @@
 
     <script type="text/javascript" src="./scripts/table.js"></script>
 
-    <button onclick="duplicatePage()">Printable View</button>
+    <button id='print-view'>Printable View</button>
 
     <script>
-        function duplicatePage() {
-            // Get the current URL of the page
-            var currentUrl = window.location.href;
-    
-            // Open a new tab with the same URL
-            var newTab = window.open(currentUrl, '_blank');
+        document.addEventListener("DOMContentLoaded", function(){
 
-            // Once the new tab is loaded, apply grayscale filter
-            newTab.onload = function() {
-                newTab.document.documentElement.style.filter = 'grayscale(100%)';
-
-                 // Disable links
-                var links = newTab.document.getElementsByTagName('a');
-                for (var i = 0; i < links.length; i++) {
-                    links[i].href = 'javascript:void(0)';
-                    links[i].onclick = null;
-                }
-
-                // Replace dropdowns with plain text
-                var dropdowns = newTab.document.getElementsByTagName('select');
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var previousValue = dropdowns[i].value;
-                    var plainText = newTab.document.createTextNode(previousValue.text);
-                    dropdowns[i].parentNode.replaceChild(plainText, dropdowns[i]);
-                    
-                }
-
-
-
-                // Disable form submission
-                var forms = newTab.document.getElementsByTagName('form');
-                for (var i = 0; i < forms.length; i++) {
-                    forms[i].onsubmit = function() { return false; };
-                }
-
-                // Disable buttons
-                var buttons = newTab.document.getElementsByTagName('button');
-                for (var i = 0; i < buttons.length; i++) {
-                    buttons[i].parentNode.removeChild(buttons[i]);
-                }
-
-                //Remove input elements
-                var submitInputs = newTab.document.querySelectorAll('input[type="submit"]');
-                submitInputs.forEach(function(input){
-                        input.parentNode.removeChild(input);
-                });
-
-                // Replace dropdowns with plain text
-                var dropdowns = newTab.document.querySelectorAll('select, input[type="number"]');
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var selectedOption;
-                    if (dropdowns[i].tagName === 'SELECT') {
-                        selectedOption = dropdowns[i].options[dropdowns[i].selectedIndex].text;
-                    } else if (dropdowns[i].tagName === 'INPUT') {
-                        selectedOption = dropdowns[i].value;
-                    }
-                    var plainText = newTab.document.createTextNode(selectedOption);
-                    dropdowns[i].parentNode.replaceChild(plainText, dropdowns[i]);
-                }
+            const colorMap = {
+                "red": "#FF0000",
+                "orange": "#FFA500",
+                "yellow": "#FFFF00",
+                "green": "#00FF00",
+                "teal": "#008080",
+                "blue": "#0000FF",
+                "purple": "#800080",
+                "grey": "#808080",
+                "brown": "#A52A2A",
+                "black": "#000000"
             };
-        }
+            const print = document.getElementById('print-view');
+            if(print){
+                print.addEventListener('click', function() {
+                    const dropdowns = document.querySelectorAll('select');
+                    dropdowns.forEach(dropdown => {
+                        const selectedColor = dropdown.value;
+                        const colorHex = colorMap[selectedColor];
+                        const dropdownContainer = document.createElement('span');
+                        dropdownContainer.textContent = `${selectedColor} (${colorHex})`;
+                        dropdown.parentNode.replaceChild(dropdownContainer, dropdown);
+                    });
+
+                    const colors = document.getElementById('color-table');
+                    const grid = document.getElementById('color-grid');
+
+                    const printPage = window.open('', '_blank');
+
+                    const gridCells = grid.querySelectorAll('td');
+                    gridCells.forEach(cell => {
+                        cell.style.backgroundColor = '';
+                    });
+
+                    printPage.document.write(`
+                    <html>
+                        <head>
+                            <title>Print Page</title>
+                            <style>
+                            body {
+                                margin: 0;
+                                padding: 0;
+                                height: 100%;
+                            }
+                            header {
+                                color: #000;
+                                padding: 20px;
+                                display: flex;
+                                align-items: center;
+                            }
+                            table {
+                                border-collapse: collapse;
+                                margin-bottom: 20px;
+                            }
+                            td {
+                                border: 1px solid black;
+                                padding: 5px;
+                                text-align: center;
+                                background-color: white;
+                            }
+                            header h1{
+                                margin: 0;
+                                flex-grow: 1;
+                            }
+                            header img{
+                                height: 50px;
+                                margin-left: 20px;
+                                filter: grayscale(100%);
+                            }
+                            #color-table{
+                                width: 100%;
+                                filter: grayscale(100%);
+                            }
+                            #color-table td{
+                                height: 30px;
+                                background-color: white;
+                            }
+                            #color-table td:first-child{
+                                display: none;
+                            }
+                            #color-grid{
+                                width: auto;
+                                table-layout: fixed;
+                            }
+                            #color-grid td{
+                                width: 150px;
+                                height: 150px;
+                                mid-width: 150px;
+                                min-height: 150px;
+                                background-color: white;
+                                padding: 0;
+                            }
+                            #header{
+                                text-align: center;
+                                margin-bottom: 20px;
+                            }
+                            #header img{
+                                width: 200px;
+                            }
+                            </style>
+                        </head>
+                        <body>
+                        <header>
+                        <h1>Colordinate</h1>
+                        <img id='logo' src="./images/ColordinateLogo2.png" alt="Colordinate Logo">
+                        </header>
+                        ${colors.outerHTML}
+                        ${grid.outerHTML}
+                        </body>
+                    `);
+                    printPage.document.close();
+                });
+            }
+        });
     </script>
 </body>
 <footer>
