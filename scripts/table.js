@@ -15,6 +15,7 @@ var paintedCells = {};
 
 function colorSelect(numColors){
     var colorTable = document.createElement('table');
+    colorTable.id = 'color-table';
     colorTable.setAttribute('border', '2');
 
     var selectedColorIndex = 0; // Default to the color in the first row
@@ -136,6 +137,7 @@ function updateColors(oldColor, newColor){
 
 function colorCoordinate(rowsCols) {
     var colorGrid = document.createElement('table');
+    colorGrid.id = 'color-grid';
     colorGrid.setAttribute('border', '1');
 
     for(var i = 0; i < rowsCols + 1; i++){ // Rows created
