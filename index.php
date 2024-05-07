@@ -10,13 +10,14 @@
 	</head>
     <body>
 	<nav>
-		<a href="index.php">Home</a>
-		<a style="color=#04622D" href="about.php">About</a>
-		<a href="index.php">
-			<img class = "logo" src="./images/ColordinateText.png" alt="header logo image" height=50px>
-		</a>
-		<a style="color=#AB0D12" href="color_coordinate.php">Color Coordinator</a>
-	</nav>
+    <a href="index.php">Home</a>
+    <a style="color=#04622D" href="about.php">About</a>
+    <a href="index.php">
+        <img class = "logo" src="./images/ColordinateText.png" alt="header logo image" height=50px>
+    </a>
+    <a style="color=#AB0D12" href="color_coordinate.php">Color Coordinator</a>
+    <a style="color=#04622D" href="color_selector.php">Color Selector</a>
+</nav>
 
 
 	<img class = "logo" src="./images/ColordinateLogo2.png" alt="logo image">
